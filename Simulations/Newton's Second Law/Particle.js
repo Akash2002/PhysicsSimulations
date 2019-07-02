@@ -8,7 +8,7 @@ let Particle = class {
 
   create () {
     ellipse(this.x, this.y, this.radius, this.radius);
-    fill('#404041');
+    fill('#000000');
     noStroke();
   }
 
