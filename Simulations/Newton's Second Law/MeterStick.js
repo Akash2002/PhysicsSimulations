@@ -10,5 +10,4 @@ let MeterStick = class {
     rect(this.x, this.y, this.width, this.height);
     fill('#C08401');
   }
-
 }
