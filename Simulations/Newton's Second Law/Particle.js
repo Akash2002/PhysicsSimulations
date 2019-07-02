@@ -13,8 +13,7 @@ let Particle = class {
   }
 
   accelerate () {
-    this.x += 1.1*(this.delta_x) + 0.5;
-    this.delta_x ++;
+    this.x += 0.5*(this.delta_x+=0.15) + 0.5;
   }
 
 }
