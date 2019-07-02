@@ -1,14 +1,20 @@
 let Particle = class {
-
   constructor(x, y, radius) {
+    this.delta_x = 0;
     this.x = x;
     this.y = y;
     this.radius = radius;
+  }
 
-    ellipse(x, y, radius, radius);
+  create () {
+    ellipse(this.x, this.y, this.radius, this.radius);
     fill('#404041');
-
     noStroke();
+  }
+
+  accelerate () {
+    this.x += 1.1*(this.delta_x) + 0.5;
+    this.delta_x ++;
   }
 
 }

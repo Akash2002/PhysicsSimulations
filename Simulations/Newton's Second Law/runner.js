@@ -1,12 +1,19 @@
 var particle;
 var meterStick;
 
+var Dimensions;
+
 function setup () {
-  createCanvas(windowWidth * 0.8, windowHeight * 0.8);
+  Dimensions = Object.freeze({"width": windowWidth * 0.8, "height": windowHeight * 0.8});
+  console.log(Dimensions.width/10);
+  createCanvas(Dimensions.width, Dimensions.height);
+  meterStick = new MeterStick(Dimensions.width/10, Dimensions.height - 120, Dimensions.width - (Dimensions.width/10)*2, 50);
+  particle = new Particle(Dimensions.width/10, Dimensions.height - 150, 50);
 }
 
 function draw () {
   background('#EAEAEB');
-  particle = new Particle(windowWidth/20, windowHeight/1.5, 50);
-  meterStick = new MeterStick(windowWidth/20, windowHeight/1.5, windowWidth - windowHeight/20, 40);
+  meterStick.create();
+  particle.create();
+  particle.accelerate();
 }

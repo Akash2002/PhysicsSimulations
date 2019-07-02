@@ -4,8 +4,11 @@ let MeterStick = class {
     this.y = y;
     this.width = width;
     this.height = height;
+  }
 
-    rect(x, y, width, height);
+  create () {
+    rect(this.x, this.y, this.width, this.height);
     fill('#C08401');
   }
+
 }
